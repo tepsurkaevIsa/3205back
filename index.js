@@ -8,6 +8,11 @@ const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)({
+    origin: 'https://3205front-z59a.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
+}));
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 const usersFilePath = path_1.default.join(__dirname, 'index.json');
@@ -29,8 +34,6 @@ app.post('/', (req, res) => {
     }, 5000);
 });
 const PORT = process.env.PORT || 3040;
-
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
-
