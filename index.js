@@ -8,11 +8,6 @@ const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)({
-    origin: 'https://3205front-z59a.vercel.app',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: 'Content-Type,Authorization',
-}));
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use((req, res, next) => {

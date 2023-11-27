@@ -6,13 +6,6 @@ import path from 'path';
 import fs from 'fs';
 
 const app: Express = express();
-app.use(cors({
-  origin: 'https://3205front-z59a.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  allowedHeaders: 'Content-Type,Authorization',
-}));
-
-
 
 app.use(cors());
 app.use(express.json());
